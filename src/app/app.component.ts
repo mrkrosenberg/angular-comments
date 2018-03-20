@@ -7,11 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  comments = [
-      { author: 'Bob', comment: 'you are alright.' },
-      { author: 'Joe', comment: 'nice work yo!'} ,
-      { author: 'Jimmy', comment: 'I would also like to congratulate you!'}
-  ];
+
   newComment = {
     author: '',
     comment: ''

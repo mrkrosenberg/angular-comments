@@ -1,36 +1,3 @@
-<h1>Comments</h1>
-<ul>
-    <li *ngFor="let comment of comments, let i = index">
-        <div *ngIf="commentToEdit !== comment">
-            <div style="border: 1px solid black" >
-                {{comment.comment}}
-                <br>
-                --{{comment.author}}
-            </div>      
-                <ul style="list-style: none" >
-                    <li>
-                        <button (click)="makeCommentEditable(comment)">Edit</button>
-                    </li>
-                    <li>
-                        <button (click)="deleteComment(i)" >Delete</button>
-                    </li>
-                </ul>
-        </div>
-        <form *ngIf="commentToEdit == comment" (submit)="submitEdit(comment)">
-            <label>Edit Comment:</label>
-            <br>
-            <input type="text" [(ngModel)]="commentToEdit.author" name="author" placeholder="Edit Author">
-            <br>
-            <input type="text" [(ngModel)]="commentToEdit.comment" name="comment" placeholder="Edit Comment">
-            <br>
-            <input type="submit" value="Save">
-        </form>
-    </li>
-</ul>
 
-<form (submit)="addComment()" >
-    <h3>Leave a comment here:</h3>
-    <input type="text" [(ngModel)]="newComment.author" name="author" placeholder="Your Name" >
-    <input type="text" [(ngModel)]="newComment.comment" name="comment" placeholder="Your Comment" >
-    <input type="submit" (submit)="addComment()">
-</form>
+
+

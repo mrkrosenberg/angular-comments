@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { CommentService } from '../comment/comment.service';
+
 @Component({
   selector: 'app-comments',
   templateUrl: './comments.component.html',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommentsComponent implements OnInit {
 
-  constructor() { }
+  comments;
+
+  constructor(
+    private commentService:  CommentService
+  ) { }
 
   ngOnInit() {
+    this.commentService.onCommentUpdated((commentList) => {
+      this.comments = commentList;
+    });
   }
 
 }

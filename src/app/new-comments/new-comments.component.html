@@ -1,3 +1,6 @@
-<p>
-  new-comments works!
-</p>
+<form (submit)="addComment()">
+  <h3>Leave a comment here:</h3>
+  <input type="text" [(ngModel)]="newComment.author" name="author" placeholder="Your Name">
+  <input type="text" [(ngModel)]="newComment.comment" name="comment" placeholder="Your Comment">
+  <input type="submit" (submit)="addComment()">
+</form>
